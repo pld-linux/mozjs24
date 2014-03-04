@@ -1,0 +1,12 @@
+--- mozjs-24.2.0/js/src/build/virtualenv/populate_virtualenv.py.orig	2013-10-29 21:40:23.000000000 +0100
++++ mozjs-24.2.0/js/src/build/virtualenv/populate_virtualenv.py	2014-03-04 08:57:39.017639389 +0100
+@@ -39,8 +39,7 @@
+     @property
+     def virtualenv_script_path(self):
+         """Path to virtualenv's own populator script."""
+-        return os.path.join(self.topsrcdir, 'python', 'virtualenv',
+-            'virtualenv.py')
++        return '/usr/bin/virtualenv'
+ 
+     @property
+     def python_path(self):
