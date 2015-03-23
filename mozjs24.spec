@@ -3,12 +3,13 @@ Summary:	SpiderMonkey 24 - JavaScript 1.8.5+ implementation
 Summary(pl.UTF-8):	SpiderMonkey 24 - implementacja języka JavaScript 1.8.5+
 Name:		mozjs24
 Version:	24.2.0
-Release:	1
+Release:	2
 License:	MPL v2.0
 Group:		Libraries
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/js/mozjs-%{version}.tar.bz2
 # Source0-md5:	5db79c10e049a2dc117a6e6a3bc78a8e
 Patch0:		%{name}-system-virtualenv.patch
+Patch1:		Disable-js-JIT-on-x32.patch
 URL:		http://www.mozilla.org/js/
 BuildRequires:	gcc-c++ >= 6:4.4
 BuildRequires:	libffi-devel >= 5:3.0.9
@@ -70,6 +71,7 @@ Statyczna wersja biblioteki JavaScript.
 %prep
 %setup -q -n mozjs-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 cd js/src
