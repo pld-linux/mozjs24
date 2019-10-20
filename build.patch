@@ -1,0 +1,11 @@
+--- mozjs-24.2.0/js/src/shell/jsoptparse.cpp~	2013-10-29 21:40:20.000000000 +0100
++++ mozjs-24.2.0/js/src/shell/jsoptparse.cpp	2019-10-20 13:39:18.818968577 +0200
+@@ -253,7 +253,7 @@ OptionParser::extractValue(size_t argc,
+     char *eq = strchr(argv[*i], '=');
+     if (eq) {
+         *value = eq + 1;
+-        if (value[0] == '\0')
++        if (value[0][0] == '\0')
+             return error("A value is required for option %.*s", eq - argv[*i], argv[*i]);
+         return Okay;
+     }
